@@ -1,0 +1,22 @@
+#content-container
+  .input-form
+    = form_for resource, as: resource_name, url: password_path(resource_name), remote: true do |f|
+      = devise_error_messages!
+      = f.email_field :email, autofocus: true, placeholder: 'email'
+      = f.submit 'Send me reset password instructions'
+
+:javascript
+  $(document).ready(function() {
+    $('#new_user')
+    .bind('ajax:success', function(evt, data, status, xhr) {
+      //window.location = '/';
+    })
+    .bind('ajax:error', function(evt, xhr, status, error) {
+      $('#error-container').remove();
+      $('#content-container').append('<div id=\'error-container\'></div>');
+
+      $.each($.parseJSON(xhr.responseText), function(i, val) {
+        $('#error-container').append('<p>' + val + '</p>');
+      });
+    });
+  });

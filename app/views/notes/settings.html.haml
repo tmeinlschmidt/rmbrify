@@ -1,0 +1,7 @@
+- content_for :header do
+  = stylesheet_link_tag 'notes/settings', media: 'all'
+
+.content-container
+  nastaveni
+
+  = link_to('Logout', logout_path, :method => :delete)

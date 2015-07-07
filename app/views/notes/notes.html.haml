@@ -1,0 +1,121 @@
+- content_for :header do
+  = stylesheet_link_tag 'notes/notes', media: 'all'
+
+#content-container
+  .input-form 
+    = form_for Note.new, remote: true do |f|
+      %input{name: 'last_id', type: 'hidden', id: 'last_id'}
+      %input{name: 'authenticity_token', type: 'hidden', value: @authenticate}
+      %i.glyphicon.glyphicon-chevron-right{'aria-hidden' => true, id: 'submit-button'}
+      = f.text_field :content, autocomplete: 'off'
+  #notes-list
+
+:javascript
+  function notes_write(data) {
+    //expects json: {notes: ARRAY, partial: BOOLEAN}
+    $(document).ready(function() {
+      //if partial
+      if(data['partial']) {
+        $.each(data['notes'], function(i, val) {
+          $('#notes-list').prepend('<div class="note" data-id="' + val.id + '"><div class="edit-box" style="display: none;"><span aria-hidden="true" class="glyphicon glyphicon-remove"></span></div><div class="content">' + val.content + '</div></div>');
+        });
+      } else {
+        $('#notes-list').empty();
+        $.each(data['notes'], function(i, val) {
+          $('#notes-list').append('<div class="note" data-id="' + val.id + '"><div class="edit-box" style="display: none;"><span aria-hidden="true" class="glyphicon glyphicon-remove"></span></div><div class="content">' + val.content + '</div></div>');
+        });
+      }
+    });
+  }
+
+  function notes_load() {
+    $.ajax({
+      type: 'GET',
+      url: '/load',
+      dataType: 'json',
+      success: function(data) {
+        notes_write(data);
+      }
+    });
+  }
+
+  notes_load();
+
+  $(document).ready(function() {
+    //edit-box
+    $(document).on('mouseenter', '.note', function(e) {
+      $(this).find('.edit-box').fadeIn(200);
+    });
+
+    $(document).on('mouseleave', '.note', function(e) {
+      $(this).find('.edit-box').fadeOut(250);
+    });
+
+    //note delete
+    $(document).on('click', '.edit-box span', function(e) {
+      note    = $(this).closest('.note')
+      note_id = note.attr('data-id');
+
+      note.fadeOut(200);
+      
+      $.ajax({
+        type: 'POST',
+        url: '/notes/' + note_id,
+        dataType: 'json',
+        data: {'_method' : 'delete'},
+        complete: function(data) {
+          notes_write(data.responseJSON);
+        }
+      });
+
+      e.preventDefault();
+    });
+
+    //glyphicon in input-form
+    $(document).on('focus', '.input-form input[type=\'text\']', function(e) {
+      $('#submit-button').fadeIn(200);
+    });
+
+    $(document).on('blur', '.input-form input[type=\'text\']', function(e) {
+      $('#submit-button').fadeOut(250);
+    });
+
+    //note create
+    $(document).on('click', '#submit-button', function(e) {
+      e.preventDefault();
+      $('#new_note').submit();
+    });
+
+    $('#new_note')
+    .bind('ajax:before', function(evt, xhr, settings) {
+      $('#last_id').val($('.note:first-of-type').data('id'));
+      
+      $('#note_content')
+      .blur()
+      .animate({
+        color: '#fff'
+      }, 250);
+    })
+    .bind('ajax:success', function(evt, data, status, xhr) {
+      $('#note_content')
+      .val('')
+      .animate({
+        'border-color': '#6FC7AA'
+      }, 250, function() {
+        $(this).animate({
+          'border-color': '#eee'
+        }, 750)
+        .css('color', '');
+      });
+
+      notes_write(data);      
+    })
+    .bind("ajax:error", function(evt, xhr, status, error) {
+      $('#note_content')
+      .animate({
+        'border-color': '#B22222'
+      }, 250, function() {
+        $(this).css('color', '');
+      });
+    });
+  });

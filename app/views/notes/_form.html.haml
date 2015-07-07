@@ -1,0 +1,5 @@
+= form_for Note.new, remote: true do |f|
+  .content-field.col-md-11.no-padding
+    = f.text_field :content, autocomplete: 'off'
+  .submit-button.col-md-1.no-padding
+    %span.glyphicon.glyphicon-chevron-right{'aria-hidden' => 'true'}

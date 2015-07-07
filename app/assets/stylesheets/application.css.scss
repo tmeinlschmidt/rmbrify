@@ -1,0 +1,51 @@
+/*
+*= require bootstrap.min
+*/
+
+@import 'variables';
+@import 'colors';
+
+// Glyphicons !important
+	@font-face {
+		font-family: 'Glyphicons Halflings';
+		src: url('../assets/glyphicons-halflings-regular.eot');
+		src: url('../assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), 
+				 url('../assets/glyphicons-halflings-regular.woff') format('woff'), 
+				 url('../assets/glyphicons-halflings-regular.ttf') format('truetype'), 
+				 url('../assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+	}
+
+// .input-form
+	.input-form {
+		input:not([type='checkbox']), button {
+			width: 100%;
+			height: $height-input;
+			padding: 5px;
+			border: 1px solid $border-color;
+		}
+
+		input {
+			&:focus {
+				outline: 0;
+			}
+
+			&:not(:last-of-type) {
+				margin-bottom: 4px;
+			}
+
+			&[type='checkbox'] {
+				vertical-align: -3px;
+			}
+		}
+
+		input[type='submit'], button {
+			height: $height-submit;
+			background-color: $color1;
+			border: none;
+			color: #fff;
+
+			&:hover {
+				background-color: $color2;
+			}
+		}
+	}
