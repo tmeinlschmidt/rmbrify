@@ -9,38 +9,24 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
 	# POST /resource
 	def create
-		#spustit originalni funkci, neprepsat
-		#super
-
 		build_resource(sign_up_params)
     resource.save
 
     if resource.persisted?
-    	#v poho
     	if resource.active_for_authentication?
-    		#aktivni model, v authenticable.rb to stejnak vraci true, tak to radsi necham tady, hehe
-    		
-    		#vypisovani nejaky zpravy - zbytecny
-    		#set_flash_message :notice, :signed_up if is_navigational_format?
-        
-    		#prihlasit
         sign_in resource_name, resource
         
-        #jedina moznost, jak presmerovat na ajax pozadavku
+        #redirecting for ajax request
         #render js: "window.location='#{root_path(resource)}'"
         
-        #vratit 'nic', kazdopadne hlavicka je 200 -> OK, neni nutny posilat zadnej json a podobny blbiny
+        #packet header contains status: 200, no need to send any content such as { successful => 'true' }
         render nothing: true
     	else
-    		#nemam poneti na co to je
     		set_flash_message :notice, :inactive_signed_up, :reason => resource.inactive_message.to_s if is_navigational_format?
         expire_session_data_after_sign_in!
         respond_with resource, :location => after_inactive_sign_up_path_for(resource)
     	end
     else
-    	#chyba
-
-    	#nechapu, co je tohle - resource.errors
     	render json: resource.errors.full_messages, status: 401
     end
 	end
