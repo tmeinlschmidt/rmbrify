@@ -65,4 +65,15 @@ group :development, :test do
   #gem 'spring'
 end
 
+group :test do
+  gem 'minitest'
+  gem 'fabrication'
+  gem 'rspec-rails', '~> 3.2'
+  gem 'shoulda-matchers', '2.5.0'
+  gem 'rspec-its'
+  gem 'mocha', require: false
+  gem 'capybara'
+  gem 'database_cleaner'
+end
+
 gem 'devise'
