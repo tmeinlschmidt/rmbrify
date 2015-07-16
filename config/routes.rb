@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
-  root 'notes#notes'
+  root 'notes#new'
   
   devise_for :users, controllers: {
     registrations: 'users/registrations',
@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  get 'notes',     to: 'notes#notes'
+  get 'notes',     to: 'notes#new'
   get 'load',      to: 'notes#load'
   get 'about',     to: 'notes#about'
   get 'settings',  to: 'notes#settings'

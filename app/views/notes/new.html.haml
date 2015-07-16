@@ -3,7 +3,7 @@
 
 #content-container
   .input-form 
-    = form_for Note.new, remote: true do |f|
+    = form_for @note, remote: true do |f|
       %input{name: 'last_id', type: 'hidden', id: 'last_id'}
       %input{name: 'authenticity_token', type: 'hidden', value: @authenticate}
       %i.glyphicon.glyphicon-chevron-right{'aria-hidden' => true, id: 'submit-button'}

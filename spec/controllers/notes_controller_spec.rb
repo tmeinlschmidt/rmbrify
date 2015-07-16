@@ -6,13 +6,11 @@ RSpec.describe NotesController, type: :controller do
   let(:note) { double }
 
   describe '#new' do
-
     before(:each) { login_user }
 
-    # missing template?
-    xit 'renders new' do
+    it 'renders new' do
       get :new
-      expect(assigns[:note]).to eq(Note.new)
+      expect(assigns[:note].attributes).to eq(Note.new.attributes)
     end
   end
 
@@ -23,6 +21,7 @@ RSpec.describe NotesController, type: :controller do
       allow(note).to receive(:destroy).and_return(true)
       delete :destroy, id: 1
     end
+
     it { expect(note).to have_received(:destroy) }
     it { expect(response).to render_template(nil) }
   end
