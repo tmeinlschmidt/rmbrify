@@ -22,7 +22,7 @@ set :deploy_to, '/home/jakub/projects/rails/rmbrify'
 # Default value for :pty is false
 # set :pty, true
 
-set :rvm_type, :system
+set :rvm_type, :user
 set :rvm_ruby_version, "2.1.5@rmbrify"
 
 # Default value for :linked_files is []
