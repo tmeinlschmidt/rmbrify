@@ -523,15 +523,26 @@
 			"file": "config/deploy.rb",
 			"settings":
 			{
-				"buffer_size": 1349,
+				"buffer_size": 1351,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "config/unicorn.rb",
+			"contents": "# Be sure to restart your server when you modify this file.\n\n# Your secret key is used for verifying the integrity of signed cookies.\n# If you change this key, all old signed cookies will become invalid!\n\n# Make sure the secret is at least 30 characters and all random,\n# no regular words or you'll be exposed to dictionary attacks.\n# You can use `rake secret` to generate a secure secret key.\n\n# Make sure the secrets in this file are kept private\n# if you're sharing your code publicly.\ndevelopment\n:\n  secret_key_base: 3ad3f285e8db239651e34a876cfde3a04aba031f684ba84aaadbd3fc655ed2213d4cdbea475888b2134545e46c19a84c67a5800714ba7cc53208a6f789e7cdb4\n\ntest:\n  secret_key_base: dddc1dc533b99fb47a74d424fd8bdbe719bbac50e89467b5863738cb6c8545c3762b77da7e7afd8fb2278670480e40c70f5c8b0b6884a87513f5f83cf2935dc3\n\n# Do not keep production secrets in the repository,\n# instead read values from the environment.\nproduction:\n  secret_key_base: fa5d9cdb2c46f41f68d228f9ba430518c2f48232cc61c98a9a3d4c60e2089d6154dbc7d6cf74eb3ab4db13a1ef5ac77324609d178c543a7ae369c23530c39d98",
+			"file": "config/secrets.yml",
+			"file_size": 1062,
+			"file_write_time": 130818978337396631,
 			"settings":
 			{
-				"buffer_size": 4880,
+				"buffer_size": 1062,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Gemfile",
+			"settings":
+			{
+				"buffer_size": 2044,
 				"line_ending": "Windows"
 			}
 		}
@@ -580,8 +591,6 @@
 	},
 	"file_history":
 	[
-		"/C/_shared/rmbrify/Gemfile",
-		"/C/_shared/rmbrify/config/secrets.yml",
 		"/C/_shared/rmbrify/config/database.yml",
 		"/C/_shared/rmbrify/config/deploy.rb",
 		"/C/_shared/rmbrify/config/unicorn.rb",
@@ -607,6 +616,7 @@
 		"/C/_shared/rmbrify/spec/controllers/note_controller_spec.rb",
 		"/C/_shared/rmbrify/spec/models/note_spec.rb",
 		"/C/_shared/rmbrify/spec/models/notes.rb",
+		"/C/_shared/rmbrify/Gemfile",
 		"/C/_shared/rmbrify/db/schema.rb",
 		"/C/_shared/rmbrify/app/controllers/users/sessions_controller.rb",
 		"/C/_shared/rmbrify/.gitignore",
@@ -707,7 +717,8 @@
 		"/C/_shared/wordbased/config/environments/production.rb",
 		"/C/wordbased/app/views/layouts/application.html.haml",
 		"/C/wordbased/config/database.yml",
-		"/C/wordbased/Gemfile"
+		"/C/wordbased/Gemfile",
+		"/C/wordbased/config/boot.rb"
 	],
 	"find":
 	{
@@ -728,9 +739,6 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"stdout",
-			"stdouth",
-			"system",
 			"2574",
 			"znouza",
 			"authenticate",
@@ -855,7 +863,10 @@
 			"cimage",
 			"country",
 			"imagecopyresampled",
-			"hs_info"
+			"hs_info",
+			"flag",
+			"location",
+			"string3"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -912,7 +923,6 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
 				{
@@ -920,15 +930,15 @@
 					"file": "config/deploy.rb",
 					"settings":
 					{
-						"buffer_size": 1349,
+						"buffer_size": 1351,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								600,
-								580
+								602,
+								602
 							]
 						],
 						"settings":
@@ -946,18 +956,47 @@
 				},
 				{
 					"buffer": 1,
-					"file": "config/unicorn.rb",
+					"file": "config/secrets.yml",
 					"settings":
 					{
-						"buffer_size": 4880,
+						"buffer_size": 1062,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1883,
-								1883
+								489,
+								500
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/YAML/YAML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Gemfile",
+					"settings":
+					{
+						"buffer_size": 2044,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
 							]
 						],
 						"settings":
@@ -970,7 +1009,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 45.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
