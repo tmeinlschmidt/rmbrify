@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"lo",
+				"logout-button"
+			],
+			[
 				"padding",
 				"padding-right"
 			],
@@ -510,15 +514,27 @@
 			[
 				"m",
 				"mail"
-			],
-			[
-				"complete",
-				"complete_task"
 			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "config/deploy.rb",
+			"settings":
+			{
+				"buffer_size": 1349,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "config/unicorn.rb",
+			"settings":
+			{
+				"buffer_size": 4880,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -564,6 +580,41 @@
 	},
 	"file_history":
 	[
+		"/C/_shared/rmbrify/Gemfile",
+		"/C/_shared/rmbrify/config/secrets.yml",
+		"/C/_shared/rmbrify/config/database.yml",
+		"/C/_shared/rmbrify/config/deploy.rb",
+		"/C/_shared/rmbrify/config/unicorn.rb",
+		"/C/_shared/rmbrify/config/deploy/production.rb",
+		"/C/_shared/rmbrify/config/application.rb",
+		"/C/_shared/rmbrify/config/routes.rb",
+		"/C/_shared/rmbrify/app/views/notes/settings.html.haml",
+		"/C/_shared/rmbrify/spec/controllers/notes_controller_spec.rb",
+		"/C/_shared/rmbrify/app/views/notes/new.html.haml",
+		"/C/_shared/rmbrify/app/controllers/notes_controller.rb",
+		"/C/Users/Jakub/Documents/_keys/public_rsa",
+		"/C/_shared/rmbrify/app/views/notes/_form.html.haml",
+		"/C/_shared/rmbrify/app/assets/stylesheets/notes/settings.css.scss",
+		"/C/_shared/rmbrify/app/assets/stylesheets/notes/_layout.css.scss",
+		"/C/_shared/rmbrify/app/views/notes/about.html.haml",
+		"/C/_shared/rmbrify/app/assets/stylesheets/variables.css.scss",
+		"/C/_shared/rmbrify/app/views/notes/notes.html.haml",
+		"/C/_shared/rmbrify/db/migrate/20150511181855_create_notes.rb",
+		"/C/_shared/rmbrify/app/models/note.rb",
+		"/C/_shared/rmbrify/.rspec",
+		"/C/_shared/rmbrify/spec/rails_helper.rb",
+		"/C/_shared/rmbrify/spec/factories/note.rb",
+		"/C/_shared/rmbrify/spec/controllers/note_controller_spec.rb",
+		"/C/_shared/rmbrify/spec/models/note_spec.rb",
+		"/C/_shared/rmbrify/spec/models/notes.rb",
+		"/C/_shared/rmbrify/db/schema.rb",
+		"/C/_shared/rmbrify/app/controllers/users/sessions_controller.rb",
+		"/C/_shared/rmbrify/.gitignore",
+		"/C/_shared/rmbrify/app/controllers/users/registrations_controller.rb",
+		"/C/_shared/rmbrify/app/views/layouts/home.html.haml",
+		"/C/_shared/rmbrify/app/views/layouts/notes.html.haml",
+		"/C/_shared/rmbrify/config/initializers/session_store.rb",
+		"/C/_shared/rmbrify/project.sublime-workspace",
 		"/C/_shared/mein-notes/project.sublime-project",
 		"/C/_shared/mein-notes/config/routes.rb",
 		"/C/_shared/mein-notes/app/controllers/notes_controller.rb",
@@ -656,42 +707,7 @@
 		"/C/_shared/wordbased/config/environments/production.rb",
 		"/C/wordbased/app/views/layouts/application.html.haml",
 		"/C/wordbased/config/database.yml",
-		"/C/wordbased/Gemfile",
-		"/C/wordbased/config/boot.rb",
-		"/C/wordbased/app/controllers/application_controller.rb",
-		"/C/wordbased/app/views/layouts/application.html.erb",
-		"/C/wordbased/app/views/posts/index.html.haml",
-		"/C/wordbased/app/views/words/index.html.erb",
-		"/C/wordbased/app/helpers/application_helper.rb",
-		"/C/wordbased/app/models/word.rb",
-		"/C/wordbased/test/test_helper.rb",
-		"/C/wordbased/app/controllers/design_controller.rb",
-		"/C/wordbased/db/seeds.rb",
-		"/C/wordbased/db/migrate/20150418122903_create_words.rb",
-		"/C/wordbased/db/schema.rb",
-		"/C/wordbased/db/migrate/20150418110550_create_words.rb",
-		"/C/wordbased/app/views/posts/index.html.erb",
-		"/C/wordbased/app/controllers/posts_controller.rb",
-		"/C/wordbased/app/views/zobraz/pozdrav.erb",
-		"/C/wordbased/app/controllers/zobraz_controller.rb",
-		"/C/wordbased/app/views/posts/show.html.erb",
-		"/C/wordbased/app/models/post.rb",
-		"/C/wordbased/app/views/zobraz/index",
-		"/C/wordbased/app/controllers/home_controller.rb",
-		"/C/Users/Jakub/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
-		"/C/wordbased/wordbased_project.sublime-project",
-		"/C/wordbased/config/routes.rb",
-		"/C/wordbased/blog/config/database.yml",
-		"/C/wordbased/config.ru",
-		"/C/Users/Jakub/Desktop/statusKontrola.php",
-		"/C/Users/Jakub/Desktop/index.php",
-		"/C/Users/Jakub/Desktop/nastaveni.php",
-		"/C/Users/Jakub/Desktop/_server_odeslat_varovani.php",
-		"/C/Users/Jakub/Desktop/zakazky/sexyjob/edit/new/new_server/index.php",
-		"/C/Users/Jakub/Desktop/zakazky/sexyjob/edit/detail/ajax_test.php",
-		"/C/_debian/test.rb",
-		"/C/Users/Jakub/Desktop/zakazky/sexyjob/edit/list/index.php",
-		"/C/Users/Jakub/Desktop/zakazky/sexyjob/edit/list/test.js"
+		"/C/wordbased/Gemfile"
 	],
 	"find":
 	{
@@ -699,9 +715,10 @@
 	},
 	"find_in_files":
 	{
-		"height": 90.0,
+		"height": 0.0,
 		"where_history":
 		[
+			"C:\\_shared\\rmbrify",
 			"C:\\_shared\\mein-notes",
 			"C:\\_shared\\rmbrify"
 		]
@@ -711,6 +728,18 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"stdout",
+			"stdouth",
+			"system",
+			"2574",
+			"znouza",
+			"authenticate",
+			"\"",
+			"mein-notes",
+			"mein",
+			"notes",
+			"mein",
+			"meinnotes",
 			"mein-notes",
 			"mein",
 			"each",
@@ -826,19 +855,7 @@
 			"cimage",
 			"country",
 			"imagecopyresampled",
-			"hs_info",
-			"flag",
-			"location",
-			"string3",
-			"size",
-			"bold",
-			"text_font",
-			"text_font0",
-			"color",
-			"string0",
-			"pretty_text_ttf",
-			"text_status_banner",
-			"text_color0"
+			"hs_info"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -846,6 +863,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"jakub",
+			"'",
 			"rmbrify",
 			"",
 			"$border-color",
@@ -893,8 +912,69 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "config/deploy.rb",
+					"settings":
+					{
+						"buffer_size": 1349,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								600,
+								580
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "config/unicorn.rb",
+					"settings":
+					{
+						"buffer_size": 4880,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1883,
+								1883
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 45.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
